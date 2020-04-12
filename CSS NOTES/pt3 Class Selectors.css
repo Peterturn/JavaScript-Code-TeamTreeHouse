@@ -1,0 +1,45 @@
+/*Class Selectors
+Class selectors match elements based on the value of their class attribute. Class selectors are defined with the dot (.) character followed by the class name. For instance, if an element has a class attribute with the value */
+
+img-user:
+<img class="img-user" src="user-035.jpg" alt="cool user" />
+you target the element with CSS like so:
+
+.img-user {
+  width: 80px;
+  border-radius: 50%;
+}
+
+/*
+ Whereas an element selector like img {...} will target every image on the page, the class selector .img-user targets only images with a class attribute of img-user.
+
+Classes are Reusable
+The biggest difference between class and ID selectors is that IDs are unique and they’re used to identify one element on the page, while a class may be used to classify and target more than one element. In other words, an element can have several classes, but only one ID. For example:*/
+
+<img id="site-logo" class="rounded med" alt="a goat" />
+
+/*The <img> element in the snippet above has one ID of site-logo and two classes: rounded and med. Each class is separated by a space.
+
+You may also assign the same class to several HTML elements on the same page.
+*/
+
+css:
+
+.img-thumbnail {
+  width: 150px;
+}
+html:
+
+<img class="img-thumbnail" src="thumb-01.jpg" alt="..." />
+<img class="img-thumbnail" src="thumb-02.jpg" alt="..." />
+<img class="img-thumbnail" src="thumb-03.jpg" alt="..." />
+...
+
+This makes classes more flexible than IDs. Being able to reuse styles this way is one of the advantages of CSS!
+
+Naming Classes
+The name you give a class is up to you. It's helpful to give classes meaningful names that communicate their purpose. For example:
+
+<header class="main-header">All things page header</header>
+<div class="content-primary">Important content</div>
+<div class="content-secondary ">Additional content</div>

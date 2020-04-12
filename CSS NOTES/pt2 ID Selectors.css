@@ -1,0 +1,25 @@
+/*ID Selectors
+An ID selector matches an HTML element based on the value of its id attribute. ID selectors are declared using the pound (#) symbol. For example, if an element has an id attribute with the value main-content:*/
+
+<div id="main-content">...</div>
+you can target that element with CSS, like this:
+
+#main-content {
+  border: 2px dotted tomato;
+}
+
+/*
+IDs Should be Unique
+ID selectors instruct the browser to target a unique element on the page. This means that an element should have only one ID, and a page should have only one element with the same ID.*/
+
+html:
+
+<img id="site-logo" src="logo.png" alt="A juggling kitty" />
+css:
+
+#site-logo {
+  width: 200px;
+  margin-right: 20px;
+}
+
+/* Remember: If you assign a style to an ID, you will not be able to reuse it within the same web page. */

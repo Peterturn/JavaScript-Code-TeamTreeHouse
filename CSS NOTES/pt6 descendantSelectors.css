@@ -1,0 +1,55 @@
+Descendant Selectors
+CSS lets you target elements based on their relationships in the HTML document. For example, you can combine selectors to create a "descendant selector" that targets an element that is a descendant of another element. This makes selectors more specific.
+
+For instance, in the following HTML code, notice the <span> tag nested inside the <header> tag:
+
+<header>
+  <h1>The Main Heading of Page</h1>
+  <span>This span is a descendant of the header element.</span>
+</header>
+You define a descendant selector using two or more selectors separated by whitespace. This rule targets only a <span> element that's nested within a <header>:
+
+header span {
+  color: darkviolet;
+  font-size: 26px;
+}
+
+or
+
+header img{
+margin-bottom: 20px;
+}
+
+Descendant selectors are not limited to type selectors only. You can make the selector more specific by targeting class or ID descendants. For example:
+
+ID
+#main-nav a {
+  text-decoration: none;
+}
+Class
+.main-header .headline {
+  color: white;
+  font-size: 72px;
+}
+or
+JS selector // let galleryLinks = document.querySelectorAll('#gallery a');
+
+Descendant selectors are commonly used to style lists. For instance, the following rules target list items in an ordered and unordered list:
+
+ul li {
+ background-color: tomato;
+}
+
+ol li {
+ background-color: papayawhip;
+}
+And this selector matches <li> tags nested within a <nav> element:
+
+nav li {
+  margin-left: 1.5em;
+}
+The nesting in your selector can be as many levels deep as possible. For example, child, grandchild, and so on:
+
+nav li a {
+  text-decoration: none;
+}

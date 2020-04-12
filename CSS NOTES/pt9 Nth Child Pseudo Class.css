@@ -1,0 +1,28 @@
+:nth-child() Pseudo-class
+The :nth-child() pseudo-class targets elements based on their position within a parent element. :nth-child() uses a function-like syntax that accepts a value between the parentheses. The value is referred to as an argument.
+
+We'll focus on two common arguments: the keywords odd and even. Both select every other child element based on an odd or even position.
+
+Select Even Elements Within a Parent
+The keyword even specifies that you want to target all the even-numbered elements. For example, the selector li:nth-child(even) matches the 2nd, 4th, 6th (etc.) <li> elements within a <ul>:
+
+li:nth-child(even) {
+  color: white;
+  background-color: springgreen;
+}
+Select Odd Elements Within a Parent
+The keyword odd specifies that you want to target all the odd-numbered elements. The following selector matches the 1st, 3rd, 5th (etc.) <li> elements within a <ul>:
+
+li:nth-child(odd) {
+  color: white;
+  background-color: turquoise;
+}
+You can also pass an integer as an argument to target a specific child element. When calculating the position of an element inside its parent, the index numbering starts at 1.
+
+li:nth-child(3) {
+  color: white;
+  background-color: thistle;
+}
+The browser targets only the 3rd list item inside the parent <ul>.
+
+There's a whole lot more :nth-child() can do, like use expressions to select a particular combination of child elements. You won't use those as much when selecting DOM elements with JavaScript

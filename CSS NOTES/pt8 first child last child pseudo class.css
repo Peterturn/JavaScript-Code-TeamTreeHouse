@@ -1,0 +1,19 @@
+:first-child and :last-child Pseudo-classes
+CSS provides helpful pseudo-classes that select elements according to their position in the document, and their relation to other elements. In this step, you'll learn how to target first and last child elements using :first-child and :last-child.
+
+Target a First Child Element
+The :first-child pseudo-class targets the first element among a group of sibling elements. For example, the following will select only the list element that is the first child of its parent:
+
+li:first-child {
+  background: #52bab3;
+  color: white;
+}
+Target a Last Child Element
+The :last-child pseudo-class targets the last child of its parent.
+
+li:last-child {
+  border-bottom: none;
+}
+The selector shown above matches only the <li> in a list and removes a border-bottom style. It doesn't matter how many list items you add or remove from the list, the last item will always be the one selected.
+
+Instead of creating a separate class for a first or last child element, you can do it more efficiently with pseudo-classes.

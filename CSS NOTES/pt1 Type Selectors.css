@@ -1,0 +1,16 @@
+Selectors are one of the most important and powerful parts of CSS because they identify the DOM element(s) to style. When you define a selector in your stylesheet, you're instructing the browser to match every instance of that selector in the HTML.
+
+For example, a type selector targets an element based on its type:
+
+
+p {
+  color: red;
+}
+
+In the above CSS snippet, p is the selector: it selects all paragraphs — <p> tags — and changes their text color to red. Type selectors are also called element selectors because you use the element’s HTML tag as the selector.
+
+The following selector targets every <button> element on the page and sets their font size to 36px:
+
+button {
+  font-size: 36px;
+}

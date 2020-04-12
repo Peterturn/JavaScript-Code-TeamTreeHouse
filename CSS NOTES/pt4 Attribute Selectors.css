@@ -1,0 +1,42 @@
+Attribute Selectors
+HTML elements can accept various types of attributes. For example: an id attribute, a class attribute, or href and title attributes.
+
+<div id="main-content" class="box" title="Tooltip">
+  ...
+</div>
+CSS provides a way to target an element based on its attributes and values, with attribute selectors. To target an attribute, you define the attribute name inside square brackets, like so:
+
+[title] {
+  color: indigo;
+}
+The snippet above will target all elements with a title attribute and apply the color style. You can be more specific by defining the element type in the selector. For example, the following targets only div elements with a title attribute:
+
+div[title] {
+  padding: 15px;
+}
+You may also include the attribute value in the selector to make it even more specific. For instance, match only a div element whose title value is Tooltip:
+
+div[title="Tooltip"] {
+  border: 1px solid lemonchiffon;
+}
+Targeting Form Elements
+Attribute selectors are useful for targeting form elements. For example:
+
+input[type="text"] {
+ background: cornsilk;
+}
+
+input[type="password"] {
+  color: gainsboro;
+}
+
+button[type="submit"] {
+  border: 2px solid forestgreen;
+}
+
+/* you group 2 or more selectors using a comma (,) separator */
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  cursor: pointer;
+}

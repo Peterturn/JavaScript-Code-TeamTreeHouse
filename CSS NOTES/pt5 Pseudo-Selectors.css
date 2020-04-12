@@ -1,0 +1,36 @@
+Pseudo-classes
+The selectors in this step are referred to as dynamic pseudo-classes because they classify elements on characteristics other than their type or attributes. Rather, they target elements in response to user actions.
+
+A pseudo-class always uses a colon (:), followed by the specified state to match.
+
+:hover
+The :hover pseudo-class selects an element when the user hovers over it with a pointing device such as a mouse. For example:
+
+a:hover {
+  color: forestgreen;
+}
+
+When the user hovers over a link with the cursor (mouse pointer), its text color turns forestgreen. :hover is not just for links. For example, the following rule targets a <button> when hovered:
+
+button:hover {
+  color: white;
+  background-color: cornflowerblue;
+}
+:link
+
+Browsers commonly display unvisited links differently from previously visited ones. To distinguish them, you use the pseudo-classes :link and :visited.
+
+The :link pseudo-class targets unvisited links – or links that have not been clicked by the user. For example, the CSS rule below selects all unvisited links on the page and sets their text color to orange:
+
+a:link {
+  color: orange;
+}
+The :link pseudo-class selects only anchor elements (<a> tags) that have an href attribute. If an <a> element does not have an href attribute, the styles will not be applied.
+
+:visited
+By default, most browsers set the color of visited links to purple. You can use the :visited pseudo-class to target links that have been visited (or clicked). This rule selects all visited links on the page and applies a new color and border-bottom styles.
+
+a:visited {
+  color: lightblue;
+  border-bottom: 1px dashed;
+}

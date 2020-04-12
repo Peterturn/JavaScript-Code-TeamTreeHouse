@@ -1,0 +1,84 @@
+CSS Combinators
+CSS combinators describe the relationship between two or more elements. Combinators make your selectors more specific, and give you the flexibility to target an element's siblings, descendants, and direct children.
+
+For example, the whitespace between a descendant selector is considered a combinator:
+
+nav li {
+  margin-left: 1.5em;
+}
+A spaced-separated selector targets an element that is nested within another element. You can also use the greater-than sign (>), plus sign (+), or tilde (~) symbol as combinators.
+
+Target Direct Children
+In a CSS selector, the greater-than sign (>) is referred to as a child combinator. Selectors that use a child combinator are called "child selectors" because they target elements that are direct children of an element. A child selector is made up of two or more selectors separated by >.
+
+In the HTML code below, the <ul> is a parent of four direct child <li> elements. The third <li> contains an <ol> with three nested <li> elements:
+
+<ul>
+  <li>Direct list item 1</li>
+  <li>Direct list item 2</li>
+  <li>
+    Direct list item 3
+    <ol>
+      <li>Nested list item 1</li>
+      <li>Nested list item 2</li>
+      <li>Nested list item 3</li>
+    </ol>
+  </li>
+  <li>Direct list item 4</li>
+</ul>
+This is how you target only the <li> tags that are directly nested inside the <ul>:
+
+ul > li {
+  border: 1px dashed lightgrey;
+}
+child combinator
+
+Target Adjacent Siblings
+The adjacent sibling combinator (+) matches an element's immediate sibling within a parent. The following HTML code shows <p> elements that immediately follow an <img> element:
+
+<img src="..." alt="...">
+<p>this is the adjacent paragraph...</p>
+
+<img src="..." alt="...">
+<p>this is another adjacent paragraph...</p>
+The selector below uses a + combinator to target any <p> element that immediately follows an <img> element:
+
+img + p {
+  margin-bottom: 20px;
+}
+In this HTML code, notice the two sibling <button> elements with the class .btn:
+
+<div>
+  <h2>Take Action Now</h2>
+  <button class="btn primary">Primary Action</button>
+  <button class="btn secondary">Secondary Action</button>
+</div>
+This CSS selector targets a .btn class that immediately follows an element with a .btn class:
+
+.btn + .btn {
+  margin-left: 20px;
+}
+This applies a left margin to the immediate sibling only.
+
+Target General Siblings
+The tilde symbol (~) is called a general sibling combinator because it not only targets immediate siblings, but also every specified sibling that follows. The selector below targets all <div> elements that follow a <header>:
+
+header ~ div {
+ background: aliceblue;
+}
+html:
+
+<div>I do not have an aliceblue background, because I appear before the header.</div>
+<header>Any div that follows me will have an aliceblue background.</header>
+<div>I have an aliceblue background.</div>
+<img src="..." alt="cool sibling">
+<p>I am a paragraph, so no aliceblue background.</p>
+<div>I also have an aliceblue background.</div>
+
+The flexibility provided by CSS combinators lets you target specific elements without having to add extra classes or IDs in your markup! Keep in mind that immediate and general sibling combinators target only siblings that follow an element, not ones that precede it. The siblings must be children of the same parent element.
+
+div > span {
+
+background-color: powderblue;
+
+}
