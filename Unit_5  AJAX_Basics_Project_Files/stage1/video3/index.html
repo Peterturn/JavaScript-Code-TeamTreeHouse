@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link href='//fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="css/main.css">
+  <title>AJAX with JavaScript</title>
+  <script>
+  //any AJAX request has to be formatted like this
+  //if you want multiple AJAX request you have to create multiple XHR requests
+  //XHR's have specail event listners aka callbacks onreadystatechange
+
+  /**
+  *AJAX has 4 steps:
+  *1 Create an XMLHttp Request object
+  *2 Create a callback function functionName
+  *3 Open a request (what methode "GET" or 'POST')
+  *4 Send the request
+  */
+// step 1
+  var xhr = new XMLHttpRequest();
+//step 2
+ xhr.onreadystatechange = function () {
+   if(xhr.readyState===4 ){
+     if(xhr.status === 200){
+   document.getElementById ("ajax").innerHTML = xhr.responseText;
+ }}else{
+   alert(xhr.statusText);
+ }
+ };
+//Step 3
+xhr.open('GET', 'sidebar.html');
+//Step 4
+//Since we are requesting data nothing gets passed into the Send.
+//If we are sending data i.e. form info we would pass that into the send()
+function sendAJAX() {
+  xhr.send();
+  document.getElementById('load').style.display = 'none';
+}
+
+
+  </script>
+</head>
+<body>
+  <div class="grid-container centered">
+    <div class="grid-100">
+      <div class="contained">
+        <div class="grid-100">
+          <div class="heading">
+            <h1>Bring on the AJAX</h1>
+            <button id="load" onclick="sendAJAX()">Bring it!</button>
+          </div>
+          <ul id="ajax">
+
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

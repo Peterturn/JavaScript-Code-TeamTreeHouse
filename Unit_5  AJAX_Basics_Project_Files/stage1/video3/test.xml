@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<songs>
+  <song>
+    <title>My Way</title>
+    <artist>Frank Sinatra</artist>
+  </song>
+   <song>
+    <title>puff the magic dragon</title>
+    <artist>Foo Foo</artist>
+  </song>
+    <song>
+    <title>Kiss Me</title>
+    <artist>Six Pence</artist>
+  </song>
+   <song>
+    <title>bad Joe</title>
+    <artist>JoeyJoey</artist>
+  </song>
+</songs>

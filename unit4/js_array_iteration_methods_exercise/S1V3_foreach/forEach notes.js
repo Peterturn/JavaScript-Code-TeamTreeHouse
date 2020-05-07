@@ -2,8 +2,8 @@ const fruits = ['apple', 'pear', 'cherry'];
 
 let capitalizedFruits = [];
 
-fruits.forEach(fruit => {
-let capitalizedFruit = fruit.toUpperCase();
+fruits.forEach(item => {
+let capitalizedFruit = item.toUpperCase();
   capitalizedFruits.push(capitalizedFruit);
 });
 

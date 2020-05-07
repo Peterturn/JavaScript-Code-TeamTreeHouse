@@ -62,5 +62,4 @@ let unfinishedTasks;
 // unfinishedTasks should be: ["Buy apples", "Write web app", "Call mom"]
 // Write your code below
 unfinishedTasks = todos
-  .filter(item => item.done === false)
-  .map(item => item.todo);
+  .filter(item => item.done === false).map(item => item.todo);
