@@ -6,9 +6,3 @@ function wait() {
  while (new Date().getTime() - start < 8000);
  console.log('finished!');
 }
-
-function bob (){
-console.log('do something');
-};
-
-
