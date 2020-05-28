@@ -1,5 +1,5 @@
 const select = document.getElementById('breeds');
-const card = document.querySelector('.card'); 
+const card = document.querySelector('.card');
 const form = document.querySelector('form');
 
 // ------------------------------------------
@@ -29,6 +29,7 @@ function generateOptions(data) {
 }
 
 function generateImage(data) {
+
   const html = `
     <img src='${data}' alt>
     <p>Click to view images of ${select.value}s</p>
@@ -40,7 +41,7 @@ function fetchBreedImage() {
   const breed = select.value;
   const img = card.querySelector('img');
   const p = card.querySelector('p');
-  
+
   fetchData(`https://dog.ceo/api/breed/${breed}/images/random`)
     .then(data => {
       img.src = data.message;
@@ -58,4 +59,3 @@ card.addEventListener('click', fetchBreedImage);
 // ------------------------------------------
 //  POST DATA
 // ------------------------------------------
-
