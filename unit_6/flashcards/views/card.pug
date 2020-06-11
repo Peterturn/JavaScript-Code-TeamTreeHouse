@@ -1,0 +1,18 @@
+extend layout.pug
+
+
+block content
+     section#content
+        //- for each worrding inside a pug document.
+        //- ul 
+        //-     each color in colors
+        //-       li= color
+        
+        h2= text
+        //- how to add logic inside a pug document (if / else)
+        if hint
+            p
+                i Hint: #{hint}
+        a(href=`${id}?side=${sideToShow}`)= sideToShowDisplay
+        br
+        a(href="/cards") Next card

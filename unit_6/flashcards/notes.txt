@@ -1,0 +1,7 @@
+hi its a good idea to put the - - save at the end of a file command to add it to your json data.
+
+Ex: flashcards petermay$ npm install express@4.15.2 --save
+
+Use the terminal command "npm init" to start a new project with json file in your current directory.
+
+Use the require in your app files to use the installed modules.
