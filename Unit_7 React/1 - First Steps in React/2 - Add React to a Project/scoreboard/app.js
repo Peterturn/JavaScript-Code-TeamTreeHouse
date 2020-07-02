@@ -1,41 +1,117 @@
-/* React.createElement accepts 3 props, 
-1 'type' often a dom element as a string, 
-2 [props]object or null, 
-3 contnets or children of the element or null
-**/
+const Header = (props) => {
+    return(
+        <header>
+            <h1>{ props.title }</h1>
+            <span className="stats"> Player: { props.totalPlayers }</span>
+        </header>
+    );
+};
 
-//const header = React.createElement(
-//    'header',
-//    { id: 'headerOne' },
-//    title,
-//    desc
-//);
+const Player = (props) => {
+    return (
+        <div className= "player">
+            <span className = "player-name">
+                <button className="remove-player" onClick={ ()=> props.removePlayer(props.id) }>x</button>
+                {props.name}
+            </span>
+            < Counter />                 
+        </div>
+    );
+}
 
-// const header = (
-//     <header>
-//       <h1>My first react element!</h1>
-//       <p>MY gosh this is so cool I learned how to add stuff to the dom with react!!!!!</p>;
-//     </header>
-//     );  
+class Counter extends React.Component {
+    //OPTION 1
+    // constructor() {
+    //     super()
+    //     this.state ={
+    //         score: 0
+    //     };
+    // }
+    
+    //OPTION 2 not supported by all browsers
+    state = {
+        score: 0
+    };
+        /*using an arrow function to create the incrementScore function vs.
+        'incrementScore()' will automatically bind everything to the parent
+        function so you only have to call e.g. onClick={this.decrementScore} vs
+        onClick={() => this.decrementScore()} or onClick={this.incrementScore.bind(this)}
+        **/
+       incrementScore = () =>{
+            this.setState( prevState => ({
+                    score: prevState.score + 1
+            }));
+        }
 
-const title = 'My first react element!';
-const titleId = 'main-title';
-const desc = "MY gosh this is so cool I learned how to add stuff to the dom with react!!!!!";
-const header = (
-    <header>
-      <h1 id={ titleId }> { title } </h1>
-      <p className="main-desc"> { desc }</p>;
-    </header>
-    );  
-      
-    /* 
-    Render takes 2 properties
-    1. the object you want to render.
-    2. the location on the DOM that you want to render to.
-    **/
+        decrementScore = () => {
+            this.setState( prevState => ({
+                 score: prevState.score - 1
+            }));
+        }
+
+        render () {
+            return(
+                <div className="counter">
+                    <button className="counter-action decrement" onClick={this.decrementScore}> - </button>
+                    <span className="counter-score">{ this.state.score }</span>
+                    <button className="counter-action increment" onClick={this.incrementScore}> + </button>
+                </div>
+                );
+            }
+}
+
+class App extends React.Component {
+
+    state = {
+        players: [
+            {
+                name: "Guil",
+                id: 1
+                },
+                {
+                name: "Treasure",
+                id: 2
+                },
+                {
+                name: "Bob",
+                id: 3
+                },
+                {
+                name: "James",
+                id: 4
+                }
+        ]
+    };
+
+    handleRemovePlayer = (id) => {
+        this.setState( prevState => {
+            return{
+                players: prevState.players.filter( p => p.id !== id)
+            };
+        });
+    }
+
+    render() {
+        return (
+            <div className="scoreboard">
+                <Header title="Scoreboard" 
+                totalPlayers= { this.state.players.length }/>
+                
+                {/* Note: Players List */}
+                { this.state.players.map( player =>
+                    <Player 
+                    name={player.name}
+                    id={player.id}
+                    key={player.id}
+                    removePlayer={this.handleRemovePlayer}
+                    />
+                )}
+            </div>
+        );
+    }  
+};
+
     ReactDOM.render(
-        header, 
+       < App />, 
         document.getElementById('root')
     );
-    
-    
